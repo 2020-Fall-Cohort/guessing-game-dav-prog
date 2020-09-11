@@ -4,15 +4,24 @@ public class GuessingGameApp {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Guess a number between 1-10:");
+        String instructions = "Guess a number between 1-10:";
+        int myNumber = 7;
+        System.out.println(instructions);
+
         int guess = input.nextInt();
-        if (guess == 7){
-            System.out.println("You win!");
-        }else{
-            System.out.println("You lose!");
+        while (guess != myNumber) {
+
+            if (guess == 0) {
+                System.out.println(instructions);
+                guess = input.nextInt();
+            }
+            System.out.println("You lose, try again!");
+            guess = input.nextInt();
         }
-                
-
+        if (guess == myNumber)
+        { System.out.println("You win!");
+        }
     }
-
 }
+
+
